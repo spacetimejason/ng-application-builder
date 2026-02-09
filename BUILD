@@ -6,8 +6,6 @@ npm_link_all_packages(name = "node_modules")
 TEST_EXCLUDES = [
     "**/*.spec.ts",
     "**/test-setup.ts",
-    "**/testing/**",
-    "**/*.component.harness.ts",
 ]
 
 ng_app(

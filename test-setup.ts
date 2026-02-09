@@ -14,21 +14,6 @@ getTestBed().initTestEnvironment(
   },
 );
 
-function disableStylesInJsdom(): void {
-  const originalAppendChild = HTMLHeadElement.prototype.appendChild;
-
-  HTMLHeadElement.prototype.appendChild = function <T extends Node>(
-    node: T,
-  ): T {
-    if ((node as HTMLElement)?.tagName === 'STYLE') {
-      return node;
-    }
-    return originalAppendChild.call(this, node);
-  };
-}
-
-disableStylesInJsdom();
-
 if (typeof window !== 'undefined') {
   console.error = () => {
     // Suppress all console.error in tests

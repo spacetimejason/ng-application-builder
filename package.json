@@ -10,6 +10,7 @@
     "test": "ng run"
   },
   "dependencies": {
+    "@analogjs/vite-plugin-angular": "^2.2.3",
     "@angular-devkit/architect-cli": "0.1802.11",
     "@angular-devkit/build-angular": "^21.1.2",
     "@angular-devkit/core": "^21.1.2",
@@ -35,7 +36,8 @@
     "rxjs": "^7.8.2",
     "tslib": "^2.0.0",
     "typescript": "5.9.3",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.8",
+    "zone.js": "^0.16.0"
   },
   "pnpm": {
     "packageExtensions": {

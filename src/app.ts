@@ -1,16 +1,16 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
 
 @Component({
-  selector: 'myapp',
+  selector: "myapp",
   template: `<div>MyApp</div>`,
   standalone: false,
 })
-class AppComponent {
-}
+class AppComponent {}
 
 @NgModule({
-})
-export class AppModule {
-  declarations: [AppComponent],  
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
-}
+  imports: [BrowserModule],
+})
+export class AppModule {}

@@ -1,2 +1,5 @@
-node_modules
+.angular
 .pnpm-store/
+bazel-*
+dist
+node_modules

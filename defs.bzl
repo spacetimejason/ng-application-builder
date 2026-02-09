@@ -7,11 +7,8 @@ PACKAGE_DEPS = [
     "//:node_modules/@angular/forms",
     "//:node_modules/@angular/material",
     "//:node_modules/@angular/router",
-    "//:node_modules/@types/node",
-    "//:node_modules/rxjs",
-    "//:node_modules/tslib",
-    "//:node_modules/@angular-devkit/build-angular",
     "//:node_modules/@angular-devkit/architect-cli",
+    "//:node_modules/@angular-devkit/build-angular",
     "//:node_modules/tslib",
     "//:node_modules/rxjs",
 ]
