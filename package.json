@@ -7,7 +7,7 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng run",
+    "test": "ng run"
   },
   "dependencies": {
     "@angular-devkit/architect-cli": "0.1802.11",
@@ -25,14 +25,13 @@
     "@angular/common": "^21.1.2",
     "@angular/compiler": "^21.1.2",
     "@angular/compiler-cli": "^21.1.2",
-    "@angular/compiler-cli": "^21.1.2",
     "@angular/core": "^21.1.2",
     "@angular/forms": "^21.1.2",
     "@angular/language-service": "^21.1.2",
     "@angular/material": "^21.1.2",
     "@angular/platform-browser": "^21.1.2",
     "@angular/platform-browser-dynamic": "^21.1.2",
-    "@angular/router": "^21.1.2"
+    "@angular/router": "^21.1.2",
     "typescript": "5.9.3",
     "vitest": "^4.0.8"
   },
