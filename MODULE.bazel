@@ -1,0 +1,28 @@
+module(name = "ng-application-builder")
+
+bazel_dep(name = "aspect_rules_js", version = "2.9.2")
+
+bazel_dep(name = "rules_nodejs", version = "6.7.3")
+node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node", dev_dependency = True)
+node.toolchain()
+
+npm = use_extension("@aspect_rules_js//npm:extensions.bzl", "npm", dev_dependency = True)
+npm.npm_translate_lock(
+    name = "npm",
+    npmrc = "//:.npmrc",
+    pnpm_lock = "//:pnpm-lock.yaml",
+)
+use_repo(npm, "npm")
+
+pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm")
+use_repo(pnpm, "pnpm")
+
+bazel_dep(name = "aspect_rules_ts", version = "3.8.3")
+rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
+rules_ts_ext.deps(
+    # The integrity value will need to be updated along with typescript version changes in package.json.
+    # `curl --silent https://registry.npmjs.org/typescript/5.9.3 | jq -r '.dist.integrity'`
+    ts_integrity = "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==",
+    ts_version_from = "//:package.json",
+)
+use_repo(rules_ts_ext, "npm_typescript")
