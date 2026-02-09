@@ -33,7 +33,8 @@
     "@angular/platform-browser": "^21.1.2",
     "@angular/platform-browser-dynamic": "^21.1.2",
     "@angular/router": "^21.1.2"
-    "vitest": "^4.0.8",
+    "typescript": "5.9.3",
+    "vitest": "^4.0.8"
   },
   "pnpm": {
     "packageExtensions": {
