@@ -26,3 +26,5 @@ rules_ts_ext.deps(
     ts_version_from = "//:package.json",
 )
 use_repo(rules_ts_ext, "npm_typescript")
+
+bazel_dep(name = "rules_angular", version = "0.1.0")
