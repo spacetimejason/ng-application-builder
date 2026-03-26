@@ -1,8 +1,14 @@
 load("@npm//:defs.bzl", "npm_link_all_packages")
 load("@rules_angular//src/architect:ng_application.bzl", "ng_application")
+load("@rules_angular//src/architect:ng_config.bzl", "ng_config")
 load("//:defs.bzl", "ng_app")
 
 npm_link_all_packages(name = "node_modules")
+
+ng_config(
+    name = "ng-config",
+    visibility = ["//angular:__subpackages__"],
+)
 
 TEST_EXCLUDES = [
     "**/*.spec.ts",
@@ -31,18 +37,6 @@ ng_app(
 ng_application(
     name = "myapp-ra",
     project_name = "myapp",
-    srcs = glob(
-        [
-            "*.json",
-            "*.ts",
-            "src/**/*",
-        ],
-        exclude = [
-            # Exclude sources that get included automatically elsewhere.
-            "angular.json",
-            "tsconfig.app.json",
-        ],
-    ),
     node_modules = ":node_modules",
-    ng_config = "angular.json",
+    ng_config = ":ng-config",
 )
